@@ -1,0 +1,43 @@
+# 通知
+notify:
+  # 是否通知所有币种
+  notify_all: false
+  ignore_coin_if_price_less_than: 0.01
+  ignore_coin_if_notify_all:
+
+  default_periods:
+    - 30min
+    - 60min
+  default_strategy:
+  default_long_or_short:
+    - long
+  # 两次提醒的时间间隔
+  default_notify_time_gap: 60*60
+
+  coins:
+    btc:
+      periods:
+        - 30min
+        - 60min
+      strategy:
+      notify_time_gap: 60*30
+    eth:
+    crv:
+    ada:
+    bch:
+    ltc:
+    link:
+    doge:
+
+# 交易
+trade:
+#  default_strategy:
+
+  coins:
+#    eth-swap:
+#      long_or_short:
+#        - long
+#        - short
+
+# 价格提醒
+price-notify:

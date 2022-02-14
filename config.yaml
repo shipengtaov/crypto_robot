@@ -1,0 +1,127 @@
+
+# 交易
+trade:
+  default_periods:
+    - 3min
+    - 15min
+  default_long_or_short:
+    - long
+    - short
+  default_strategies:
+    FiveStepV2_1:
+      default_period: 15min
+      check_direction_of_shorter_period: 3min
+  coins:
+    # eth:
+    # uni:
+      # periods:
+      #   - 1min
+      #   - 3min
+      # strategies:
+      #   FiveStepV2:
+      #     default_period: 3min
+      #     check_direction_of_shorter_period: 1min
+
+# 通知
+notify:
+  # 是否通知所有币种
+  notify_all: false
+  ignore_coin_if_price_less_than: 0.01
+  default_periods:
+    # - 3min
+    # - 5min
+    - 15min
+    - 30min
+    - 1h
+  default_long_or_short:
+    - long
+    - short
+  default_strategies:
+      # - strategy_name: FiveStepV2_1
+      #   kwargs:
+      #     default_period: 15min
+      #     check_direction_of_shorter_period: 3min
+      # - strategy_name: FiveStepV2_1
+      #   kwargs:
+      #     default_period: 30min
+      #     check_direction_of_shorter_period: 3min
+      # - strategy_name: FiveStepV2_1
+      #   kwargs:
+      #     default_period: 1h
+      #     check_direction_of_shorter_period: 5min
+
+      # 均线策略: 20, 40
+      - strategy_name: MovingAverageV2
+        kwargs:
+          default_period: 15min
+          ma_list:
+            - 20
+            - 40
+        webhook_url_attr: 'slack_webhook_url_ma_strategy_20_40'
+        # notify_extra_key: 'MovingAverageV2-15min-20-40'
+        notify_extra_key: 'MovingAverageV2-20-40'
+      - strategy_name: MovingAverageV2
+        kwargs:
+          default_period: 30min
+          ma_list:
+            - 20
+            - 40
+        webhook_url_attr: 'slack_webhook_url_ma_strategy_20_40'
+        notify_extra_key: 'MovingAverageV2-20-40'
+      - strategy_name: MovingAverageV2
+        kwargs:
+          default_period: 1h
+          ma_list:
+            - 20
+            - 40
+        webhook_url_attr: 'slack_webhook_url_ma_strategy_20_40'
+        notify_extra_key: 'MovingAverageV2-20-40'
+
+      # macd策略
+      - strategy_name: MACDSteps
+        kwargs:
+          default_period: 15min
+        webhook_url_attr: 'slack_webhook_url_macd_strategy'
+        notify_extra_key: 'MACDSteps-15min'
+      # - strategy_name: MACDSteps
+      #   kwargs:
+      #     default_period: 30min
+      #   webhook_url_attr: 'slack_webhook_url_macd_strategy'
+      #   notify_extra_key: 'MACDSteps-30min'
+      # - strategy_name: MACDSteps
+      #   kwargs:
+      #     default_period: 1h
+      #   webhook_url_attr: 'slack_webhook_url_macd_strategy'
+      #   notify_extra_key: 'MACDSteps-1h'
+
+  # 两次提醒的时间间隔. 以秒为单位
+  # default_notify_time_gap: 60*60
+  # default_notify_time_gap: 60*15*2
+  default_notify_time_gap: 60*14*2
+
+  coins:
+    btc:
+    eth:
+    uni:
+    sushi:
+    ada:
+    ltc:
+    dot:
+    bch:
+    link:
+    matic:
+    # xrp:
+    doge:
+      # notify_time_gap: 60*60*4
+    shib:
+    crv:
+    aave:
+    avax:
+    luna:
+    sol:
+    mana:
+    sand:
+    alice:
+
+    bnb:
+    # cake:

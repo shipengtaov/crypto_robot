@@ -1,0 +1,23 @@
+aiohttp
+aiomysql
+attrs
+# https://github.com/kernc/backtesting.py
+backtesting
+# https://github.com/ccxt/ccxt
+# ccxt
+# https://github.com/carpedm20/emoji
+emoji>=1.2.0
+environs
+loguru
+numpy
+pandas
+# https://github.com/sammchardy/python-binance
+python-binance
+pyyaml
+# https://github.com/slackapi/python-slack-sdk
+slack_sdk
+TA-Lib
+websockets
+
+ipython
+supervisor

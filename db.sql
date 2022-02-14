@@ -1,0 +1,23 @@
+CREATE TABLE `orders` (
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
+  `coin` varchar(30) DEFAULT NULL COMMENT '币种',
+  `open_price` decimal(30,15) DEFAULT NULL COMMENT '开仓成交价格',
+  `open_volume` decimal(20,10) DEFAULT NULL COMMENT '开仓成交数量',
+  `open_plan_price` decimal(30,15) DEFAULT NULL COMMENT '开仓委托价格',
+  `open_plan_volume` decimal(20,10) DEFAULT NULL COMMENT '开仓委托数量',
+  `open_fee` decimal(20,10) DEFAULT NULL COMMENT '开仓手续费',
+  `huobi_open_order_id` varchar(30) DEFAULT NULL COMMENT '火币开仓订单id',
+  `close_price` decimal(30,15) DEFAULT NULL COMMENT '平仓价格',
+  `close_plan_price` decimal(30,15) DEFAULT NULL COMMENT '触发平仓时的价格',
+  `close_fee` decimal(20,10) DEFAULT NULL COMMENT '平仓手续费',
+  `huobi_close_order_id` varchar(30) DEFAULT NULL COMMENT '火币平仓订单id',
+  `long_or_short` enum('LONG','SHORT') DEFAULT NULL COMMENT '做多还是做空',
+  `balance_before_open` decimal(30,15) DEFAULT NULL COMMENT '开仓前余额',
+  `balance_after_close` decimal(30,15) DEFAULT NULL COMMENT '平仓后余额',
+  `closed` int NOT NULL DEFAULT '0' COMMENT '是否已平仓',
+  `open_time` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '开仓时间',
+  `close_time` datetime DEFAULT NULL COMMENT '平仓时间',
+  `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
